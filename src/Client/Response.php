@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MyApp\Client;
-
 
 class Response
 {

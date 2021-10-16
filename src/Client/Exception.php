@@ -1,18 +1,16 @@
 <?php
 
-
 namespace MyApp\Client;
-
 
 class Exception
 {
     private String $message;
-    private int $errorCode;
+    private int $code;
 
-    public function __construct(String $message, int $errorCode)
+    public function __construct(String $message, int $code)
     {
         $this->setMessage($message);
-        $this->setErrorCode($errorCode);
+        $this->setCode($code);
     }
 
     /**
@@ -34,17 +32,17 @@ class Exception
     /**
      * @return int
      */
-    public function getErrorCode(): int
+    public function getCode(): int
     {
-        return $this->errorCode;
+        return $this->code;
     }
 
     /**
      * @param int $errorCode
      */
-    private function setErrorCode(int $errorCode): void
+    private function setCode(int $code): void
     {
-        $this->errorCode = $errorCode;
+        $this->code = $code;
     }
 
 }

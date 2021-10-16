@@ -2,7 +2,7 @@
 
 namespace MyApp\Client;
 
-use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
+use Symfony\Component\HttpClient\Exception\ClientException;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class ApiClient
@@ -50,7 +50,7 @@ class ApiClient
         try {
             return new Response($response_get_todos->getContent());
         }
-        catch (ClientExceptionInterface $ex)
+        catch (ClientException $ex)
         {
             return new Exception($ex->getMessage(), $ex->getCode());
         }
@@ -68,7 +68,7 @@ class ApiClient
         try {
             return new Response($response_add_todo->getContent());
         }
-        catch (ClientExceptionInterface $ex)
+        catch (ClientException $ex)
         {
             return new Exception($ex->getMessage(), $ex->getCode());
         }
@@ -86,7 +86,7 @@ class ApiClient
         try {
             return new Response($response_update_todo->getContent());
         }
-        catch (ClientExceptionInterface $ex)
+        catch (ClientException $ex)
         {
             return new Exception($ex->getMessage(), $ex->getCode());
         }
@@ -106,7 +106,7 @@ class ApiClient
         try {
             return new Response($response_delete_todo->getContent());
         }
-        catch (ClientExceptionInterface $ex)
+        catch (ClientException $ex)
         {
             return new Exception($ex->getMessage(), $ex->getCode());
         }
